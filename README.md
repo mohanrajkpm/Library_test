@@ -1,24 +1,90 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Software Requirements
+---------------------
 
-Things you may want to cover:
+* Install Rails 7
 
-* Ruby version
+* Install Ruby version 3.X
 
-* System dependencies
+* Instal Postgresql 
 
-* Configuration
 
-* Database creation
+Add below gem
+=============
 
-* Database initialization
+JSON Response
+-------------
 
-* How to run the test suite
+gem 'fast_jsonapi'
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+Execute an Application
+======================
 
-* ...
+Clone a repository
+------------------
+
+git clone git@github.com:mohanrajkpm/Library_test.git
+
+Enter into an application
+-------------------------
+
+cd LibraryAPI
+
+bundle install
+
+rails s
+
+
+API Documentation
+=================
+
+Fetch Library details
+---------------------
+
+Request URL
+-----------
+
+http://localhost:3000/api/v1/libraries
+
+
+Method
+------
+
+GET
+
+Response
+--------
+
+{
+	data: [
+		{
+			id: "1",
+			type: "book",
+			attributes: {
+				title: "C Programming",
+				status: "checked_out",
+				checked_out_by: "john"
+			}
+		},
+		{
+			id: "3",
+			type: "book",
+			attributes: {
+				title: "Java Programming",
+				status: "available",
+				checked_out_by: "john"
+			}
+		}
+	]
+}
+
+
+Execute an Testcase
+===================
+
+	1. Go to project path
+	2. Run below command
+	
+		rails test
